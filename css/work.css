@@ -1,0 +1,906 @@
+/* -----------projec共用-------- */
+:root {
+    --color-main-20: rgba(10, 83, 121, .20);
+    --color-main-10: rgba(10, 83, 121, .1);
+}
+
+/* 共元元件 */
+/* 小標左方星星 */
+.title-star {
+    width: 16px;
+    height: 24px;
+    margin-right: 8px;
+    transform: translateY(-2px);
+}
+
+.section-linear {
+    bottom: 0;
+    left: calc(50% - 350px);
+    right: 0;
+}
+.section-linear.mirror{
+    top: 0;
+    bottom: unset;
+    transform: rotate(180deg);
+}
+
+.bk-white {
+    background-color: var(--color-white);
+}
+
+.bk-grid {
+    width: 110vw;
+    height: 100%;
+    top: 0;
+    left: calc(-55vw + 50%);
+    background: url(../img/grid.png);
+    background-size: 16px 16px;
+    opacity: 0.1;
+}
+
+.bk-grid::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, var(--color-white) 0, transparent 40px, transparent calc(100% - 40px), var(--color-white) 100%);
+}
+.bk-cloud{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 75px solid transparent;
+    border-image: url(../img/border-cloud.png) 75 fill round;
+}
+
+/* project元件 */
+/* 專案標題 */
+.project-view{
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: none;
+    transform: translateY(100vw);
+    transition: .5s;
+}
+.project-view.active{
+    display: block;
+    transform: translateY(0);
+}
+ .project-header {
+    width: 100%;
+    height: 600px;
+}
+.project-caption {
+    left: 0;
+    right: 0;
+    bottom: -75px;
+}
+.project-caption .main{
+    z-index: 10; 
+    min-height: 150px;
+    padding: 40px;
+}
+
+.project-caption h2 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.project-caption .ellipse {
+    width: 100px;
+    height: 60px;
+    top: 0;
+    left: -12px;
+    transform: rotate(-30deg);
+    padding: 2px;
+    border-radius: 100%;
+    background: linear-gradient(to bottom right, var(--color-second), transparent);
+}
+
+.project-caption .ellipse::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    background: #fff;
+}
+
+.project-caption img {
+    width: 20px;
+    height: 30px;
+    top: 20px;
+    left: 68px;
+}
+
+.project-caption h1 {
+    font-size: 1.5rem;
+}
+.caption-list{
+    min-width: 300px;
+    /* width: 100%; */
+}
+.caption-list p {
+    color: var(--color-text-light);
+}
+
+/* 專案內文 */
+.project-body {
+    margin-top: 75px;
+}
+
+.project-body h6 {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-main);
+}
+
+.project-body section {
+    padding: 80px 0;
+    /* border: 2px solid red; */
+}
+
+.project-body section h2 {
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.project-body .overview,
+.project-body .design-thinking,
+.project-body .final-present{
+    max-width: 730px;
+    /* border: 2px solid red; */
+    margin: auto;
+}
+.project-body .conclusion{
+    max-width: 930px;
+    /* border: 2px solid red; */
+    margin: auto;
+}
+
+
+/* 概述 */
+.project-body .overview {
+    margin-bottom: 120px;
+}
+
+.project-body .overview .slogan{
+   color: var(--color-third);
+}
+
+.project-body section h2 {
+    text-align: center;
+}
+
+.project-body .background {
+    max-width: 440px;
+    background-color: var(--color-white);
+    border-radius: 12px;
+    position: relative;
+    z-index: 10;
+}
+
+.project-body .background p span {
+    color: var(--color-third);
+    font-weight: bold;
+}
+
+.project-body .background-shadow {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 711px;
+    height: 476px;
+    background: linear-gradient(160deg, var(--color-third) -100%, transparent 75%);
+    opacity: 50%;
+    clip-path: polygon(425px 0, 100% 286px, 286px 100%, 0 190px);
+}
+
+.project-body .problem {
+    max-width: 540px;
+    /* border: 1px solid red; */
+    margin-top: 32px;
+}
+
+.project-body .problem h6 {
+    /* border: 1px solid red; */
+    text-align: end;
+    margin-right: 80px;
+    color: var(--color-main-20);
+}
+
+.project-body .problem-item p {
+    max-width: 420px;
+    background-color: var(--color-main-10);
+    border-radius: 12px;
+    margin-right: 0;
+}
+
+.project-body .problem-item p:nth-child(1) {
+    background-color: var(--color-main-20);
+    margin-right: 80px;
+}
+
+.project-body .problem-item p:nth-child(1)::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: -24px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0px 24px 20px 0;
+    transform: skewY(24deg);
+    border-color: transparent var(--color-main-20)transparent transparent;
+}
+
+.project-body .problem-item p:nth-child(2n) {
+    margin-right: 40px;
+}
+
+.project-body .problem-item p::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* 設計思考 */
+.project-body .design-thinking h2 span{
+    color: var(--color-third);
+}
+
+.project-body .design-thinking .aid-info,
+.project-body .design-draft .aid-info{
+    padding: 40px 0;
+}
+
+.project-body .design-thinking .aid-info .main,
+.project-body .design-draft .aid-info .main {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+/* 設計稿 */
+.project-body .design-draft .color-codes p {
+    width: 106px;
+    padding: 12px 20px;
+    border: 1px solid var(--color-line);
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+}
+.project-body .design-draft .wireframe{
+    position: relative;
+    display: block;
+    z-index: 10;
+    width: 100%;
+    margin: auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+/* 最終展示 */
+.project-body .final-present{
+    padding-top: 120px;
+}
+.project-body .final-present .display .device{
+    width: 100%;
+    z-index: 10;
+}
+.project-body .final-present .display::before{
+    content: "";
+    display: block;
+    position:absolute;
+    bottom: calc(-60px + 3%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 72%;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--color-third) -100%, transparent 75%);
+    opacity: .3;
+    clip-path: polygon(34% 0%, 66% 0%, 100% 100%, 0% 100%);
+
+}
+.project-body .final-present .display .view{
+    width: 95.5%;
+    top: 3%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.project-body .final-present .button{
+    display: block;
+    width: 200px;
+}
+/* 心得結論 */
+.project-body .conclusion .main{
+    z-index: 10;
+    padding: 60px;
+}
+.project-body .conclusion h2{
+    margin-bottom: 20px;
+    z-index: 10;
+}
+.project-body .conclusion .ellipse{
+    width: 80px;
+    height: 40px;
+    top: 0;
+    left: calc(50% + 50px);
+    transform: rotate(-30deg);
+    padding: 2px;
+    border-radius: 100%;
+    background: linear-gradient(to bottom right,var(--color-second),transparent );
+}
+.project-body .conclusion .ellipse:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    background: #fff;
+}
+.project-body .conclusion img{
+    width: 16px;
+    height: 24px;
+    top: 10px;
+    left: calc(50% + 110px);
+}
+
+.thank{
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+
+
+/* ------ project1 -------*/
+/* 變數設定 */
+#project1 ,.project1-colors{
+    --color-background: #F5F7F8;
+    --color-white: #fff;
+    --color-main: #0A5379;
+    --color-second: #AFDAAB;
+    --color-third: #2296A6;
+    --color-line: #DFE7E8;
+    --color-text-dark: #4D4D4D;
+    --color-text-light: #91A1A3;
+    /* 按鈕色碼 */
+    --color-button-main-hover:#227D96;
+    --color-button-main-active:#086b78;
+    --color-button-second-hover:#8CC9AA;
+    --color-button-second-active:#68B8A8;
+    --color-button-third-hover:#F7F9F9;
+    --color-button-third-active:#DFE7E8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--color-main)
+}
+
+h6,
+p {
+    color: var(--color-text-dark);
+}
+
+/*  畫面渲染  */
+#project1 {
+    background: url(../img/bk-uiux-03.svg) repeat var(--color-background) ;
+    background-size: 300px 211.84px;
+    overflow-x: hidden;
+}
+
+#project1 .project-header {
+    background: url(../img/project1-main.png), linear-gradient(to bottom right, #0B547A, #80AC9A);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+#project1 .project-body .design-draft .color-codes p:nth-child(1) {
+    color: var(--color-main);
+}
+
+#project1 .project-body .design-draft .color-codes p:nth-child(2) {
+    color: var(--color-second);
+}
+
+#project1 .project-body .design-draft .color-codes p:nth-child(3) {
+    color: var(--color-text-light);
+}
+
+#project1 .project-body .design-draft .color-codes p:nth-child(4) {
+    color: var(--color-text-dark);
+}
+
+#project1 .project-body .design-draft .color-codes p:nth-child(5) {
+    color: var(--color-text-light);
+    background-color: var(--color-background);
+}
+#project1 .project-body .design-thinking .aid-info img.main {
+    max-width: 480px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+}
+
+
+/* ------ project2 -------*/
+/* 變數設定 */
+#project2 ,.project2-colors{
+    --color-background: #FEF5EF;
+    --color-white: #fff;
+    --color-main: #840032;
+    --color-second: #FFE07C;
+    --color-third: #CA054D;
+    --color-line: #DFE7E8;
+    --color-text-dark: #272838;
+    --color-text-light: #93949C;
+    --color-main-20: rgba(132, 0, 50, .20);
+    --color-main-10: rgba(132, 0, 34, 0.1);
+    /* 按鈕色碼 */
+    --color-button-main-hover:#A70240;
+    --color-button-main-active:#840032;
+    --color-button-second-hover:#FACA77;
+    --color-button-second-active:#F2A970;
+    --color-button-third-hover:#F7F9F9;
+    --color-button-third-active:#DFE7E8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--color-main)
+}
+
+h6,
+p {
+    color: var(--color-text-dark);
+}
+/* 元件 */
+#project2 .label{
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 50px;
+    color: var(--color-third);
+    display: inline-block;
+    background-color: #FAE6ED;
+    
+}
+#project2 .label span{
+    color: var(--color-text-dark);
+}
+#project2 .label.sec{
+    color: var(--color-text-dark);
+    background-color: #EFF2F3;
+}
+
+
+/*  畫面渲染  */
+#project2 {
+    background: url(../img/bk-uiux-03.svg) repeat var(--color-background) ;
+    background-size: 300px 211.84px;
+    overflow-x: hidden;
+}
+
+#project2 .project-header {
+    background: url(../img/project2-main.png), linear-gradient(to bottom right, var(--color-main), var(--color-third));
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+#project2 .project-body .background-shadow {
+    clip-path: polygon(425px 0, 100% 286px, 206px 100%, 0 270px);
+}
+
+#project2 .project-body .design-draft .color-codes p:nth-child(1) {
+    color: var(--color-main);
+}
+
+#project2 .project-body .design-draft .color-codes p:nth-child(2) {
+    color: var(--color-second);
+}
+
+#project2 .project-body .design-draft .color-codes p:nth-child(3) {
+    color: var(--color-third);
+}
+
+#project2 .project-body .design-draft .color-codes p:nth-child(4) {
+    color: var(--color-text-dark);
+}
+
+#project2 .project-body .design-draft .color-codes p:nth-child(5) {
+    color: var(--color-main);
+    background-color: var(--color-background);
+}
+
+/* project2 才有的 */
+#project2 .competing-products{
+    color: var(--color-text-light);
+}
+#project2 .user-analysis-group{
+    max-width: 730px;
+}
+
+#project2 .user-analysis {
+   width: 50%;
+}
+
+#project2 .user-analysis h3{
+    color: var(--color-third);
+}
+#project2 .user-analysis h3::after{
+    position: absolute;
+    bottom: 0;
+    font-size: 14px;
+    padding: 8px 14px;
+    background-color: #FAE6ED;
+    border-radius: 50px;
+    margin-left: 12px;
+}
+#project2 .user-analysis.user1 h3::after{
+    content: "運動新手";
+}
+#project2 .user-analysis.user2 h3::after{
+    content: "規律運動";
+}
+#project2 .user-analysis ul{
+    margin: 0;
+    padding: 0;
+    /* height: 205px; */
+}
+#project2 .user-analysis ul p{
+    margin: 0;
+}
+#project2 .user-analysis-info .user-analysis-th{
+    color: var(--color-text-light);
+    min-width: 32px;
+}
+#project2 .user-analysis-img{
+    width: 160px;
+    object-fit: contain;
+    object-position: top;
+}
+#project2 .user-analysis .button{
+    width: fit-content;
+    height: 48px;
+    padding: 0 16px;
+    color: #b1bbbf;
+}
+#project2 .user-analysis-group.show-pe .user-analysis-info,
+#project2 .user-analysis-group.show-pe .empathy-map-sm {
+    /* min-width: calc(100vw - 60px); */
+    /* display: block; */
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s 0s, height 0.3s 0.3s;
+        -moz-transition: opacity 0.3s 0s, height 0.3s 0.3s;
+        transition: opacity 0.3s 0s, height 0.3s 0.3s;
+}
+#project2 .empathy-map-sm .user-analysis-th{
+    color: var(--color-text-light);
+    min-width: 50px;
+}
+
+#project2 .empathy-map{
+    width: 100%;
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    overflow: hidden;
+}
+#project2 .empathy-map .empathy-img{
+    width: 100px;
+    height: 100px;
+    object-fit: none;
+    object-position: -40px 0px;
+    border-radius: 100px;
+    /* background-color: var(--color-background); */
+    left: 0;
+    right: 0;
+    top: calc(50% - 50px);
+    margin: auto;
+    z-index: 100;
+}
+#project2 .empathy-map #user2-empathy .empathy-img{
+    object-position: -25px 0px;
+}
+#project2 .empathy-map #user1-empathy,
+#project2 .empathy-map #user2-empathy {
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s 0s, height 0s 0.3s;
+        -moz-transition: opacity 0.3s 0s, height 0s 0.3s;
+        transition: opacity 0.3s 0s, height 0s 0.3s;
+}
+#project2 .empathy-map #user1-empathy.hidden,
+#project2 .empathy-map #user2-empathy.hidden {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+#project2 .empathy-get::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/bk-cross.png) no-repeat;
+    background-size: 100% 100%;
+    object-fit: fill;
+}
+#project2 .empathy-get,
+#project2 .empathy-gain{
+    padding: 20px;
+    text-align: center;
+}
+#project2 .empathy-get h6{
+    font-size: 14px;
+    color: var(--color-text-light);
+    margin-bottom: 4px;
+}
+#project2 .empathy-get p{
+    margin-bottom: 0;
+}
+#project2 .empathy-get .empathy-get-think,
+#project2 .empathy-get .empathy-get-do{
+    width: 55%;
+    margin: auto;
+}
+#project2 .empathy-get .empathy-get-see,
+#project2 .empathy-get .empathy-get-hear{
+    width: 30%;
+    margin: 20px 0;
+}
+
+#project2 .empathy-gain div{
+    width: 300px;
+    padding: 16px;
+    background-color: #EFF2F3;
+    border-radius: 12px;
+    /* border:1px solid var(--color-third); */
+}
+#project2 .empathy-gain h6{
+   font-size: 16px;
+   margin-bottom: 8px;
+   color: var(--color-third);
+}
+#project2 .core-path p{
+    padding: 0 12px;
+}
+#project2 .core-path-user,
+#project2 .core-path-main{
+    border-bottom: 1px solid var(--color-line);
+}
+
+#project2 .core-line .arrow{
+    border-style: solid;
+    border-width: 10px 0 10px 12px;
+    border-color: transparent transparent transparent var(--color-third);
+    /* margin: 8px 0; */
+}
+#project2 .color-codes p{
+    border-color: var(--color-background);
+}
+
+/* #project2 .sitemap,
+#project2 .flowchart,
+#project2 .wireframe{
+    position: relative;
+    display: block;
+    z-index: 10;
+} */
+#project2 .sitemap{
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+    display: block;
+}
+#project2 .aid-info .sub-title{
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width:730px;
+    color: var(--color-third);
+    margin: auto;
+}
+#project2 .aid-info .sub-title h4{
+    color: var(--color-third);
+    font-weight: bold;
+    width: 250px;
+}
+#project2 .flowchart-up{
+    margin-top: -120px;
+}
+#project2 .flowchart{
+    width: 100vw;
+    height: 680px;
+    object-fit: cover;
+    left: calc(50% - 50vw);
+    top: 0;
+}
+#project2 .wireframe{
+    width: 100%;
+    max-width: 1024px;
+    margin-top: 24px;
+}
+
+
+/* ------ rwd ------ */
+/* md */
+@media screen and (max-width:992px) {
+    .project-caption {
+        max-width: calc(100% - 48px);
+        padding:0;
+    }
+    #project2 .flowchart-up{
+        margin-top: -80px;
+    }
+    #project2 .design-draft .aid-info{
+        padding-top: 20px;
+    }
+    #project2 .flowchart{
+        height: 520px;
+    }
+        
+}
+/* sm */
+@media screen and (max-width:768px) {
+    .project-caption .main{
+        z-index: 10; 
+        min-height: 150px;
+        padding: 40px;
+    }
+    .project-caption  {
+        bottom: -90px;
+        text-align: center;
+    }
+    .project-body {
+        margin-top: 90px;
+    }
+    .caption-list {
+        min-width: 0;
+    }
+    .project-body .problem-item p:nth-child(1)::after {
+        top: -24px;
+        left: 20px;
+        border-width: 0 10px 24px 10px;
+        transform: skewX(24deg);
+        border-color: transparent transparent var(--color-main-20) transparent;
+    }
+    .project-body .background-shadow {
+        background: linear-gradient(180deg, var(--color-third) -100%, transparent 75%);
+        opacity: 20%;
+    }
+    #project2 .user-analysis {
+        width: 100%;
+     }
+    #project2 .flowchart-up{
+        margin-top: -40px;
+    }
+    #project2 .flowchart{
+        height: 400px;
+        padding-top: 20px;
+    }
+    #project2 .user-analysis-group.show-pe .user-analysis-info.hidden,
+    #project2 .user-analysis-group.show-pe .empathy-map-sm.hidden{
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+}
+/* xs */
+@media screen and (max-width:576px) {
+    .project-header{
+        height: 480px;
+    }
+    .project-body .problem h6{
+        margin-right: 0;
+    }
+    .project-body .problem-item p{
+        margin-left:auto;
+        margin-right: 0;
+    }
+    .project-body .problem-item p:nth-child(1) {
+        margin-right:0;
+    }
+    .project-body .problem-item p:nth-child(2n) {
+        margin-right:0;
+    }
+    .project-body .design-thinking,
+    .project-body .design-draft{
+        margin: 0 12px;
+    }
+    .project-logo{
+        width: 100px;
+    }
+    #project2 .user-analysis-img{
+        height: 160px;
+        border-radius: 300px;
+        background-color: var(--color-background);
+        overflow: hidden;
+        object-fit:cover;
+        object-position: 0 10px;
+        margin:0 auto 20px;
+    }
+    #project2 .user-analysis.user1 .user-analysis-img{
+        object-position: -10px 10px;
+    }
+    #project2 .core-path{
+        border: 1px solid var(--color-line);
+        border-radius: 12px;
+        padding: 16px;
+    }
+    #project2 .core-line .arrow{
+        border-width: 12px 12px 0 12px ;
+        border-color:  var(--color-third) transparent transparent transparent;
+    }
+    #project2 .design-draft .aid-info{
+        padding-top: 0px;
+    }
+    #project2 .flowchart-up{
+        margin-top:0;
+    }
+    
+
+}
+
+/* 特例 */
+@media screen and (max-width:490px) {
+    .project-body .background-shadow,
+    #project2 .project-body .background-shadow  {
+        width: calc(100% + 270px);
+        height: calc(100% + 190px);
+        clip-path: polygon(calc(100% - 286px) 0, 100% 286px, 286px 100%, 0 calc(100% - 190px));
+    }
+    
+
+}
+
+@media screen and (max-width:430px) {
+    .project-caption {
+        bottom: -225px;
+    }
+    .project-body {
+        margin-top: 225px;
+    }
+    .caption-list {
+        flex-direction: column;
+        gap:8px !important;
+        margin-top: 8px;
+    }
+    /* .user-analysis{
+        flex-direction: column;
+    } */
+    
+}
+@media screen and (max-width:410px) {
+    #project2 .flowchart{
+        padding-top: 60px;
+    }
+}
