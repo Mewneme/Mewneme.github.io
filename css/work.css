@@ -904,3 +904,136 @@ p {
         padding-top: 60px;
     }
 }
+
+/* ------ project3 -------*/
+/* 變數設定 */
+#project3 ,.project3-colors{
+    --color-background: #FEF5EF;
+    --color-white: #fff;
+    --color-main: #840032;
+    --color-second: #FFE07C;
+    --color-third: #CA054D;
+    --color-line: #DFE7E8;
+    --color-text-dark: #272838;
+    --color-text-light: #93949C;
+    --color-main-20: rgba(132, 0, 50, .20);
+    --color-main-10: rgba(132, 0, 34, 0.1);
+    /* 按鈕色碼 */
+    --color-button-main-hover:#A70240;
+    --color-button-main-active:#840032;
+    --color-button-second-hover:#FACA77;
+    --color-button-second-active:#F2A970;
+    --color-button-third-hover:#F7F9F9;
+    --color-button-third-active:#DFE7E8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--color-main)
+}
+
+h6,
+p {
+    color: var(--color-text-dark);
+}
+/* 元件 */
+#project2 .label{
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 50px;
+    color: var(--color-third);
+    display: inline-block;
+    background-color: #FAE6ED;
+    
+}
+#project2 .label span{
+    color: var(--color-text-dark);
+}
+#project2 .label.sec{
+    color: var(--color-text-dark);
+    background-color: #EFF2F3;
+}
+
+
+/*  畫面渲染  */
+
+/* ------ project4 -------*/
+/* 變數設定 */
+#project4 ,.project1-colors{
+    --color-background: #F5F7F8;
+    --color-white: #fff;
+    --color-main: #0A5379;
+    --color-second: #AFDAAB;
+    --color-third: #2296A6;
+    --color-line: #DFE7E8;
+    --color-text-dark: #4D4D4D;
+    --color-text-light: #91A1A3;
+    /* 按鈕色碼 */
+    --color-button-main-hover:#227D96;
+    --color-button-main-active:#086b78;
+    --color-button-second-hover:#8CC9AA;
+    --color-button-second-active:#68B8A8;
+    --color-button-third-hover:#F7F9F9;
+    --color-button-third-active:#DFE7E8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--color-main)
+}
+
+h6,
+p {
+    color: var(--color-text-dark);
+}
+
+/*  畫面渲染  */
+#project4 {
+    background: url(../img/bk-uiux-03.svg) repeat var(--color-background) ;
+    background-size: 300px 211.84px;
+    overflow-x: hidden;
+}
+
+#project4 .project-header {
+    background: url(../img/illustraor/err400.png), linear-gradient(to bottom right, #0B547A, #80AC9A);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+#project4 .project-body .design-draft .color-codes p:nth-child(1) {
+    color: var(--color-main);
+}
+
+#project4 .project-body .design-draft .color-codes p:nth-child(2) {
+    color: var(--color-second);
+}
+
+#project4 .project-body .design-draft .color-codes p:nth-child(3) {
+    color: var(--color-text-light);
+}
+
+#project4 .project-body .design-draft .color-codes p:nth-child(4) {
+    color: var(--color-text-dark);
+}
+
+#project4 .project-body .design-draft .color-codes p:nth-child(5) {
+    color: var(--color-text-light);
+    background-color: var(--color-background);
+}
+#project4 .project-body .design-thinking .aid-info img.main {
+    max-width: 480px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+}
+#project4 .project-body .design-thinking .taiwan img {
+    width: 45%;
+}
